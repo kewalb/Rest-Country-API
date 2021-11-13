@@ -3,7 +3,7 @@
 // Creating a new obev=ct for XMLHttpRequest
 let con = new XMLHttpRequest();
 // Opening a connection
-con.open("GET", "https://restcountries.eu/rest/v2/all", true)
+con.open("GET", "https://restcountries.com/v3.1/all", true)
 // Sending a request
 con.send()
 
@@ -31,4 +31,10 @@ con.onload = function(){
     // Get total population
     let totalPopulaton = data.reduce((acc, ele) => acc+=ele.population , 0)
     console.log(totalPopulaton)
+
+    data.forEach((country) => console.log(
+        "name: " + country.altSpellings + "\n" +
+        "capital: " + country.capital + "\n" +
+        "flag: " + country.flag + "\n" 
+    ))
 }
